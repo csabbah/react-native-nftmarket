@@ -21,7 +21,6 @@ const Home = () => {
             ListHeaderComponent={<HomeHeader />}
           />
         </View>
-
         <View
           style={{
             position: "absolute",
