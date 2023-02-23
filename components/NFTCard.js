@@ -8,6 +8,10 @@ import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
 const NFTCard = ({ data }) => {
   const navigation = useNavigation();
 
+  const style = {
+    right: 10,
+  };
+
   return (
     <View
       style={{
@@ -29,7 +33,7 @@ const NFTCard = ({ data }) => {
             borderTopRightRadius: SIZES.font,
           }}
         />
-        <CircleButton imgUrl={assets.heart} />
+        <CircleButton positioning={style} imgUrl={assets.heart} />
       </View>
       <SubInfo />
       <View style={{ width: "100%", padding: SIZES.font }}>
