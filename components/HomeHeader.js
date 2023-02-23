@@ -2,7 +2,7 @@ import { View, Text, Image, TextInput } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = ({ onSearch }) => {
+const HomeHeader = ({ onSearch, nftData }) => {
   return (
     <View
       style={{
@@ -82,8 +82,13 @@ const HomeHeader = ({ onSearch }) => {
           <TextInput
             placeholder="Search NFTs"
             style={{ flex: 1 }}
-            onChangeText={onSearch}
+            onChangeText={(e) => {
+              onSearch(e);
+            }}
           />
+          <View style={{ marginLeft: 10 }}>
+            {nftData.length == 0 && <Text>No data found</Text>}
+          </View>
         </View>
       </View>
     </View>
